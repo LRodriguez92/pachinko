@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayOnTrigger : MonoBehaviour
+public class PlayExplosionOnTrigger : MonoBehaviour
 {
     ParticleSystem particleObject;
 
@@ -10,6 +10,7 @@ public class PlayOnTrigger : MonoBehaviour
     {
         particleObject = GetComponent<ParticleSystem>();
         particleObject.Play();
+        Destroy(gameObject, 2);
 
     }
 }

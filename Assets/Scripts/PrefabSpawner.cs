@@ -5,15 +5,39 @@ using UnityEngine;
 public class PrefabSpawner : MonoBehaviour
 {
     public GameObject prefabToSpawn;
+    public LifeTracker lifeTracker;
+    
+    int maxAmountOfSpawns;
+
+    void Start()
+    {
+        maxAmountOfSpawns = lifeTracker.lives;
+    }
+
+    void Update()
+    {
+        maxAmountOfSpawns = lifeTracker.lives;
+    }
+
     public void SpawnPrefab()
     {
-        GameObject spawnedObject = Instantiate(prefabToSpawn) as GameObject;
+        maxAmountOfSpawns -= 1;
 
-        Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (maxAmountOfSpawns >= 0) 
+        {
+            GameObject spawnedObject = Instantiate(prefabToSpawn) as GameObject;
 
-        spawnPosition.z = prefabToSpawn.transform.position.z;
+            Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        spawnedObject.transform.position = spawnPosition;
+            spawnPosition.z = prefabToSpawn.transform.position.z;
+
+            spawnedObject.transform.position = spawnPosition;
+            
+        }
+        else
+        {
+            Debug.Log("Prefab reached the max amount of spawns!");
+        }
     }
 
 }
