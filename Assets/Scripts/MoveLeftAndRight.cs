@@ -22,11 +22,9 @@ public class MoveLeftAndRight : MonoBehaviour
     }
 
     void Update() {
-        Debug.Log("Updating");
 
         if (moveRight)
         {
-            Debug.Log("Moving right");
             if (gameObject.transform.position.x >= 7.8f)
             {
                 moveRight = false;
@@ -38,7 +36,6 @@ public class MoveLeftAndRight : MonoBehaviour
         }
         else if (!moveRight)
         {
-            Debug.Log("Moving left");
             if (gameObject.transform.position.x <= -8f)
             {
                 moveRight = true;

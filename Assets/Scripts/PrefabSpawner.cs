@@ -6,6 +6,7 @@ public class PrefabSpawner : MonoBehaviour
 {
     public GameObject prefabToSpawn;
     public LifeTracker lifeTracker;
+    public float spawnHeight;
     
     private int maxAmountOfSpawns;
 
@@ -30,6 +31,8 @@ public class PrefabSpawner : MonoBehaviour
             Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             spawnPosition.z = prefabToSpawn.transform.position.z;
+
+            spawnPosition.y = spawnHeight;
 
             spawnedObject.transform.position = spawnPosition;
             

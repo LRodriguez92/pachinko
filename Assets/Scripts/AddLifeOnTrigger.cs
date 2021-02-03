@@ -9,6 +9,10 @@ public class AddLifeOnTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        lifeTracker.IncreaseLives(livesToAdd);
+        if (collision.tag == "Ball")
+        {
+            lifeTracker.IncreaseLives(livesToAdd);
+            Destroy(collision.gameObject);
+        }
     } 
 }
