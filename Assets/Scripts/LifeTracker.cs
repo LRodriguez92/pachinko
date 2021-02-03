@@ -87,4 +87,9 @@ public class LifeTracker : MonoBehaviour
 
         // spawnedObject.transform.position = new Vector3(deletedIconPositions[index], yPosition, zPosition);
     }
+
+    public int GetLives()
+    {
+        return lives;
+    }
 }

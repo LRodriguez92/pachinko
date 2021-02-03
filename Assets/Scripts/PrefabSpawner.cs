@@ -7,7 +7,7 @@ public class PrefabSpawner : MonoBehaviour
     public GameObject prefabToSpawn;
     public LifeTracker lifeTracker;
     
-    int maxAmountOfSpawns;
+    private int maxAmountOfSpawns;
 
     void Start()
     {
@@ -38,6 +38,11 @@ public class PrefabSpawner : MonoBehaviour
         {
             Debug.Log("Prefab reached the max amount of spawns!");
         }
+    }
+
+    public int GetNumSpawned()
+    {
+        return maxAmountOfSpawns;
     }
 
 }
