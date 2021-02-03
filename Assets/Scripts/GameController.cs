@@ -22,7 +22,6 @@ public class GameController : MonoBehaviour
     void Update()
     {
         platformCount = GameObject.FindGameObjectsWithTag("Platform").Length;
-        Debug.Log(platformCount);
 
         if (platformCount <= 0)
         {
