@@ -11,13 +11,11 @@ public class DestroyBall : MonoBehaviour
     {
         if (collision.tag == "Ball" && lifeTracker != null)
         {
-            //lifeTracker.DecreaseLives(livesToSubtract);
             Destroy(collision.gameObject);
 
             if(lifeTracker.GetLives() <= 0)
             {
                 gameController.GameOver();
-                Debug.Log("Game Over");
             }
         }
         else if (collision.tag == "Ball")

@@ -8,24 +8,26 @@ public class GameController : MonoBehaviour
     //public LifeTracker lifeTracker;
     public GameObject gameOverScreen;
 
+    private int platformCount;
+
     // Start is called before the first frame update
     void Start()
     {
         gameOverScreen.SetActive(false);
+
+        platformCount = GameObject.FindGameObjectsWithTag("Platform").Length;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (lifeTracker == null)
-        //{
-        //    return;
-        //}
+        platformCount = GameObject.FindGameObjectsWithTag("Platform").Length;
+        Debug.Log(platformCount);
 
-        //if (lifeTracker.GetLives() <= 0)
-        //{
-        //    gameOverScreen.SetActive(true);
-        //}
+        if (platformCount <= 0)
+        {
+            GameOver();
+        }
     }
 
     public void GameOver()
@@ -37,4 +39,11 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public int GetPlatformCount()
+    {
+        return platformCount;
+
+    }
+
 }
