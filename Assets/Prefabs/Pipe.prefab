@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5429798397889231280}
   - component: {fileID: 5429798397889231283}
   - component: {fileID: 5429798397889231282}
+  - component: {fileID: -2738065630441802979}
   m_Layer: 0
   m_Name: Pipe
   m_TagString: Untagged
@@ -210,3 +211,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2738065630441802979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429798397889231272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2402c73c99c394a2389afefa2f12f8d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleSounds:
+  - {fileID: 8300000, guid: 98584e6027c7a4c82bdd0af1b3729a70, type: 3}

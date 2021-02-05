@@ -15,7 +15,6 @@ public class DestroyBall : MonoBehaviour
         lives = lifeTracker.GetLives();
         ballCount = GameObject.FindGameObjectsWithTag("Ball").Length;
 
-        Debug.Log("Balls in field: " + ballCount + "--- Lives left: " + lives);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
